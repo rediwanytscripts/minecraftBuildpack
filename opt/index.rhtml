@@ -2,8 +2,6 @@
   <% f.lines.select { |line| line.include?("URL:") }.each do |line| %>
     <!--Minecraft Server IP: <%= line.match(/tcp:\/\/(.+:[0-9]+) /)[1] %>.
     Please wait at least a minute before joining the server.-->
-	<head>
-		<meta http-equiv='refresh' content='0; URL=<%= line.match(/tcp:\/\/(.+:[0-9]+) /)[1] %>'>
-	</head>
+		<%= line.match(/tcp:\/\/(.+:[0-9]+) /)[1] %>
   <% end %>
 <% end %>
